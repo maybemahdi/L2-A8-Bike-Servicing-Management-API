@@ -22,7 +22,7 @@ const getAllCustomers = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
-    message: "All Customer retrived succesfully",
+    message: "Customers fetched successfully",
     data: result,
   });
 });
@@ -32,7 +32,7 @@ const getSpecificCustomer = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
-    message: "Get A Customer retrived succesfully",
+    message: "Customer fetched successfully",
     data: result,
   });
 });
