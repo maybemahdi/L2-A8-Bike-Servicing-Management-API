@@ -68,7 +68,7 @@ const deleteCustomer = async (req: Request) => {
   }
 };
 
-export const customerService = {
+export const CustomerService = {
   createCustomer,
   getAllCustomers,
   getSpecificCustomer,

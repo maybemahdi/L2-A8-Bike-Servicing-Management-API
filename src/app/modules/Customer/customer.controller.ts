@@ -2,21 +2,23 @@ import { Request, Response } from "express";
 import catchAsync from "../../../shared/catchAsync";
 import { StatusCodes } from "http-status-codes";
 import sendResponse from "../../../shared//sendResponse";
-import { customerService } from "./customer.service";
+import { CustomerService } from "./customer.service";
 
-const createCustomer = catchAsync(async (req: Request, res: Response) => {
-  const result = await customerService.createCustomer(req);
+export const createCustomer = catchAsync(
+  async (req: Request, res: Response) => {
+    const result = await CustomerService.createCustomer(req);
 
-  sendResponse(res, {
-    success: true,
-    status: StatusCodes.OK,
-    message: "Customer created succesfully",
-    data: result,
-  });
-});
+    sendResponse(res, {
+      success: true,
+      status: StatusCodes.CREATED,
+      message: "Customer created successfully",
+      data: result,
+    });
+  }
+);
 
 const getAllCustomers = catchAsync(async (req: Request, res: Response) => {
-  const result = await customerService.getAllCustomers();
+  const result = await CustomerService.getAllCustomers();
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
@@ -26,7 +28,7 @@ const getAllCustomers = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getSpecificCustomer = catchAsync(async (req: Request, res: Response) => {
-  const result = await customerService.getSpecificCustomer(req);
+  const result = await CustomerService.getSpecificCustomer(req);
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
@@ -38,7 +40,7 @@ const getSpecificCustomer = catchAsync(async (req: Request, res: Response) => {
 // update Customer data
 
 const updateCustomerData = catchAsync(async (req: Request, res: Response) => {
-  const result = await customerService.updateCustomer(req);
+  const result = await CustomerService.updateCustomer(req);
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
@@ -50,7 +52,7 @@ const updateCustomerData = catchAsync(async (req: Request, res: Response) => {
 // delete Customer data
 
 const deleteCustomerData = catchAsync(async (req: Request, res: Response) => {
-  const result = await customerService.deleteCustomer(req);
+  const result = await CustomerService.deleteCustomer(req);
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
@@ -58,7 +60,7 @@ const deleteCustomerData = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-export const CustomerControllers = {
+export const CustomerController = {
   createCustomer,
   getAllCustomers,
   getSpecificCustomer,
