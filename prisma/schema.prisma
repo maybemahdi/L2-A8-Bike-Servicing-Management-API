@@ -12,3 +12,46 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+
+
+model Customer {
+  customerId String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  phone      String
+  createdAt  DateTime @default(now())
+
+  Bikes      Bike[]
+
+  @@map("customers")
+}
+
+model Bike {
+  bikeId     String   @id @default(uuid())
+  brand      String
+  model      String
+  year       Int
+  customerId String
+
+  Customer   Customer @relation(fields: [customerId], references: [customerId])
+
+  ServiceRecords ServiceRecord[]
+
+  @@index([customerId])
+  @@map("bikes")
+}
+
+model ServiceRecord {
+  serviceId      String   @id @default(uuid())
+  serviceDate    DateTime
+  completionDate DateTime?
+  description    String
+  status         String
+  bikeId         String
+
+  Bike           Bike     @relation(fields: [bikeId], references: [bikeId])
+
+  @@index([bikeId])
+  @@map("service_records")
+}
