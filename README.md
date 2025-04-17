@@ -4,7 +4,13 @@
 
 The Bike Service Management API is a RESTful service designed to handle the management of customers, bikes, and service records. It enables adding, retrieving, updating, and deleting customers and bikes, as well as creating, retrieving, and updating service records for bikes. The API also includes a feature for tracking overdue or pending services.
 
-## Live Backend Link
+## Live API Endpoint
+
+The backend is deployed on Vercel and accessible at the following link:
+
+🔗 `https://bike-servicing.vercel.app`
+
+> Note: This is a REST API. You can interact with it using tools like Postman or through a frontend.
 
 ## Tech Stack
 
@@ -44,23 +50,23 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Request Body**:
     ```json
     {
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "phone": "123-456-7890"
+    	"name": "John Doe",
+    	"email": "john.doe@example.com",
+    	"phone": "123-456-7890"
     }
     ```
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Customer created successfully",
-      "data": {
-        "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194",
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "phone": "123-456-7890",
-        "createdAt": "2025-04-11T12:34:56.789Z"
-      }
+    	"success": true,
+    	"message": "Customer created successfully",
+    	"data": {
+    		"customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194",
+    		"name": "John Doe",
+    		"email": "john.doe@example.com",
+    		"phone": "123-456-7890",
+    		"createdAt": "2025-04-11T12:34:56.789Z"
+    	}
     }
     ```
 
@@ -91,15 +97,15 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Customer fetched successfully",
-      "data": {
-        "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194",
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "phone": "123-456-7890",
-        "createdAt": "2025-04-11T12:34:56.789Z"
-      }
+    	"success": true,
+    	"message": "Customer fetched successfully",
+    	"data": {
+    		"customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194",
+    		"name": "John Doe",
+    		"email": "john.doe@example.com",
+    		"phone": "123-456-7890",
+    		"createdAt": "2025-04-11T12:34:56.789Z"
+    	}
     }
     ```
 
@@ -109,22 +115,22 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Request Body**:
     ```json
     {
-      "name": "Johnathan Doe",
-      "phone": "555-123-9999"
+    	"name": "Johnathan Doe",
+    	"phone": "555-123-9999"
     }
     ```
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Customer updated successfully",
-      "data": {
-        "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194",
-        "name": "Johnathan Doe",
-        "email": "john.doe@example.com",
-        "phone": "555-123-9999",
-        "createdAt": "2025-04-11T12:34:56.789Z"
-      }
+    	"success": true,
+    	"message": "Customer updated successfully",
+    	"data": {
+    		"customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194",
+    		"name": "Johnathan Doe",
+    		"email": "john.doe@example.com",
+    		"phone": "555-123-9999",
+    		"createdAt": "2025-04-11T12:34:56.789Z"
+    	}
     }
     ```
 
@@ -133,8 +139,8 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Customer deleted successfully"
+    	"success": true,
+    	"message": "Customer deleted successfully"
     }
     ```
 
@@ -146,24 +152,24 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Request Body**:
     ```json
     {
-      "brand": "Yamaha",
-      "model": "R15",
-      "year": 2022,
-      "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
+    	"brand": "Yamaha",
+    	"model": "R15",
+    	"year": 2022,
+    	"customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
     }
     ```
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Bike added successfully",
-      "data": {
-        "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-        "brand": "Yamaha",
-        "model": "R15",
-        "year": 2022,
-        "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
-      }
+    	"success": true,
+    	"message": "Bike added successfully",
+    	"data": {
+    		"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    		"brand": "Yamaha",
+    		"model": "R15",
+    		"year": 2022,
+    		"customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
+    	}
     }
     ```
 
@@ -173,17 +179,17 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Bikes fetched successfully",
-      "data": [
-        {
-          "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-          "brand": "Yamaha",
-          "model": "R15",
-          "year": 2022,
-          "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
-        }
-      ]
+    	"success": true,
+    	"message": "Bikes fetched successfully",
+    	"data": [
+    		{
+    			"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    			"brand": "Yamaha",
+    			"model": "R15",
+    			"year": 2022,
+    			"customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
+    		}
+    	]
     }
     ```
 
@@ -192,15 +198,15 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Bike fetched successfully",
-      "data": {
-        "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-        "brand": "Yamaha",
-        "model": "R15",
-        "year": 2022,
-        "customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
-      }
+    	"success": true,
+    	"message": "Bike fetched successfully",
+    	"data": {
+    		"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    		"brand": "Yamaha",
+    		"model": "R15",
+    		"year": 2022,
+    		"customerId": "87b3d7e1-8d9a-4f51-bf01-6f1e92f0f194"
+    	}
     }
     ```
 
@@ -212,25 +218,25 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Request Body**:
     ```json
     {
-      "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-      "serviceDate": "2025-04-11T10:00:00.000Z",
-      "description": "Oil change",
-      "status": "pending"
+    	"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    	"serviceDate": "2025-04-11T10:00:00.000Z",
+    	"description": "Oil change",
+    	"status": "pending"
     }
     ```
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Service record created successfully",
-      "data": {
-        "serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
-        "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-        "serviceDate": "2025-04-11T10:00:00.000Z",
-        "completionDate": null,
-        "description": "Oil change",
-        "status": "pending"
-      }
+    	"success": true,
+    	"message": "Service record created successfully",
+    	"data": {
+    		"serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
+    		"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    		"serviceDate": "2025-04-11T10:00:00.000Z",
+    		"completionDate": null,
+    		"description": "Oil change",
+    		"status": "pending"
+    	}
     }
     ```
 
@@ -240,18 +246,18 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Service records fetched successfully",
-      "data": [
-        {
-          "serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
-          "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-          "serviceDate": "2025-04-11T10:00:00.000Z",
-          "completionDate": null,
-          "description": "Oil change",
-          "status": "pending"
-        }
-      ]
+    	"success": true,
+    	"message": "Service records fetched successfully",
+    	"data": [
+    		{
+    			"serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
+    			"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    			"serviceDate": "2025-04-11T10:00:00.000Z",
+    			"completionDate": null,
+    			"description": "Oil change",
+    			"status": "pending"
+    		}
+    	]
     }
     ```
 
@@ -261,16 +267,16 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Service record fetched successfully",
-      "data": {
-        "serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
-        "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-        "serviceDate": "2025-04-11T10:00:00.000Z",
-        "completionDate": null,
-        "description": "Oil change",
-        "status": "pending"
-      }
+    	"success": true,
+    	"message": "Service record fetched successfully",
+    	"data": {
+    		"serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
+    		"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    		"serviceDate": "2025-04-11T10:00:00.000Z",
+    		"completionDate": null,
+    		"description": "Oil change",
+    		"status": "pending"
+    	}
     }
     ```
 
@@ -280,22 +286,22 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Request Body (optional: custom completionDate, else default to now)**:
     ```json
     {
-      "completionDate": "2025-04-11T15:30:00.000Z"
+    	"completionDate": "2025-04-11T15:30:00.000Z"
     }
     ```
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Service marked as completed",
-      "data": {
-        "serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
-        "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-        "serviceDate": "2025-04-11T10:00:00.000Z",
-        "completionDate": "2025-04-11T15:30:00.000Z",
-        "description": "Oil change",
-        "status": "done"
-      }
+    	"success": true,
+    	"message": "Service marked as completed",
+    	"data": {
+    		"serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
+    		"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    		"serviceDate": "2025-04-11T10:00:00.000Z",
+    		"completionDate": "2025-04-11T15:30:00.000Z",
+    		"description": "Oil change",
+    		"status": "done"
+    	}
     }
     ```
 
@@ -304,26 +310,26 @@ The Bike Service Management API is a RESTful service designed to handle the mana
   - **Response**:
     ```json
     {
-      "success": true,
-      "message": "Overdue or pending services fetched successfully",
-      "data": [
-        {
-          "serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
-          "bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
-          "serviceDate": "2025-04-01T10:00:00.000Z",
-          "completionDate": null,
-          "description": "Oil change",
-          "status": "pending"
-        },
-        {
-          "serviceId": "c9bce2ff-44a2-4b3f-bef7-04f5e35d21d2",
-          "bikeId": "a3d2d3cb-f72f-4b63-a7d6-20e57bc30ef1",
-          "serviceDate": "2025-04-02T12:00:00.000Z",
-          "completionDate": null,
-          "description": "Engine tuning",
-          "status": "in-progress"
-        }
-      ]
+    	"success": true,
+    	"message": "Overdue or pending services fetched successfully",
+    	"data": [
+    		{
+    			"serviceId": "a1e4a182-c80d-4ff7-9a3d-873929f9d0e6",
+    			"bikeId": "f3f1b192-3e62-402e-9bd3-d351a5a10e92",
+    			"serviceDate": "2025-04-01T10:00:00.000Z",
+    			"completionDate": null,
+    			"description": "Oil change",
+    			"status": "pending"
+    		},
+    		{
+    			"serviceId": "c9bce2ff-44a2-4b3f-bef7-04f5e35d21d2",
+    			"bikeId": "a3d2d3cb-f72f-4b63-a7d6-20e57bc30ef1",
+    			"serviceDate": "2025-04-02T12:00:00.000Z",
+    			"completionDate": null,
+    			"description": "Engine tuning",
+    			"status": "in-progress"
+    		}
+    	]
     }
     ```
 
@@ -337,9 +343,9 @@ When an error occurs, the response will follow a standardized structure to provi
 
 ```json
 {
-  "success": false,
-  "status": 404,
-  "message": "Customer not found",
-  "error": "Not Found"
+	"success": false,
+	"status": 404,
+	"message": "Customer not found",
+	"error": "Not Found"
 }
 ```
