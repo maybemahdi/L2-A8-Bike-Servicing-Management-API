@@ -12,6 +12,12 @@ The API is hosted on Vercel and can be accessed via the following link:
 
 > **Note**: This is a REST API and can be tested using tools like Postman or integrated with a frontend application.
 
+## API Documentation
+
+The API Documentation with request and response via POSTMAN:
+
+🔗 [https://documenter.getpostman.com/view/33239718/2sB2cd3xDD](https://documenter.getpostman.com/view/33239718/2sB2cd3xDD)
+
 ## Technology Stack
 
 - **Backend**: Node.js with Express.js
