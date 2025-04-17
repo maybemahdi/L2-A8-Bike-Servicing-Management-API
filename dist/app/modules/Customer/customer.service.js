@@ -59,6 +59,7 @@ const deleteCustomer = (req) => __awaiter(void 0, void 0, void 0, function* () {
                 customerId: req.params.customerId,
             },
         });
+        console.log("notExitsCustomer", notExitsCustomer);
         if (!notExitsCustomer)
             return null;
         const deletedResult = yield prisma_1.default.customer.delete({
@@ -66,10 +67,11 @@ const deleteCustomer = (req) => __awaiter(void 0, void 0, void 0, function* () {
                 customerId: req.params.customerId,
             },
         });
+        console.log("deletedResult", deletedResult);
         return deletedResult;
     }
     catch (err) {
-        throw new Error("An error occurred while trying to delete the customer");
+        throw new Error("An error occurred while trying to delete the customer, customer might have a relation with another table");
     }
 });
 exports.CustomerService = {

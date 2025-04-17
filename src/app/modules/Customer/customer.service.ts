@@ -55,6 +55,7 @@ const deleteCustomer = async (req: Request) => {
 				customerId: req.params.customerId,
 			},
 		});
+		console.log("notExitsCustomer", notExitsCustomer);
 		if (!notExitsCustomer) return null;
 
 		const deletedResult = await prisma.customer.delete({
@@ -63,9 +64,13 @@ const deleteCustomer = async (req: Request) => {
 			},
 		});
 
+		console.log("deletedResult", deletedResult);
+
 		return deletedResult;
 	} catch (err) {
-		throw new Error("An error occurred while trying to delete the customer");
+		throw new Error(
+			"An error occurred while trying to delete the customer, customer might have a relation with another table"
+		);
 	}
 };
 

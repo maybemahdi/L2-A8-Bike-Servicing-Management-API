@@ -5,8 +5,8 @@ const sendResponse = (res, jsonData) => {
         success: jsonData.success,
         message: jsonData.message,
     };
-    if (jsonData.success)
-        response.data = jsonData.data || null;
+    if (jsonData.success && jsonData.data !== undefined)
+        response.data = jsonData.data;
     if (!jsonData.success) {
         response.status = jsonData.status;
         // response.error = jsonData.error || null;
