@@ -14,20 +14,20 @@ app.use(express.json());
 app.use("/api/", router);
 
 app.get("/", (req: Request, res: Response) => {
-  res.send({
-    Message: "Library server are runing..",
-  });
+	res.send({
+		Message: "Bike Service server are runing..",
+	});
 });
 
 app.use(globalErrorHandler);
 
 // NOT FOUND API
 app.use((req: Request, res: Response, next: NextFunction) => {
-  res.status(StatusCodes.NOT_FOUND).json({
-    success: false,
-    status: StatusCodes.NOT_FOUND,
-    message: "API NOT FOUND!",
-  });
+	res.status(StatusCodes.NOT_FOUND).json({
+		success: false,
+		status: StatusCodes.NOT_FOUND,
+		message: "API NOT FOUND!",
+	});
 });
 
 export default app;

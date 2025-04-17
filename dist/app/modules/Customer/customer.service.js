@@ -47,6 +47,8 @@ const updateCustomer = (req) => __awaiter(void 0, void 0, void 0, function* () {
         },
         data: req.body,
     });
+    if (!updateResult)
+        return null;
     return updateResult;
 });
 // delete
@@ -58,7 +60,7 @@ const deleteCustomer = (req) => __awaiter(void 0, void 0, void 0, function* () {
             },
         });
         if (!notExitsCustomer)
-            throw new Error("Customer not found");
+            return null;
         const deletedResult = yield prisma_1.default.customer.delete({
             where: {
                 customerId: req.params.customerId,

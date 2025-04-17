@@ -15,6 +15,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BikeService = void 0;
 const prisma_1 = __importDefault(require("../../shared/prisma"));
 const createNewBike = (req) => __awaiter(void 0, void 0, void 0, function* () {
+    const { customerId } = req.body;
+    const existingCustomer = yield prisma_1.default.customer.findUnique({
+        where: {
+            customerId,
+        },
+    });
+    if (!existingCustomer) {
+        const error = new Error("Customer not found");
+        error.code = "CUSTOMER_NOT_FOUND";
+        throw error;
+    }
     const newBikeData = yield prisma_1.default.bike.create({
         data: req.body,
     });

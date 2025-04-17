@@ -59,6 +59,12 @@ const getSpecificCustomer = (0, catchAsync_1.default)((req, res) => __awaiter(vo
 // UPDATE CUSTOMER DATA
 const updateCustomerData = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield customer_service_1.CustomerService.updateCustomer(req);
+    if (result === null)
+        return (0, sendResponse_1.default)(res, {
+            success: false,
+            status: http_status_codes_1.StatusCodes.NOT_FOUND,
+            message: "Customer not found",
+        });
     (0, sendResponse_1.default)(res, {
         success: true,
         status: http_status_codes_1.StatusCodes.OK,
@@ -69,6 +75,12 @@ const updateCustomerData = (0, catchAsync_1.default)((req, res) => __awaiter(voi
 // DELETE CUSTOMER DATA
 const deleteCustomerData = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield customer_service_1.CustomerService.deleteCustomer(req);
+    if (result === null)
+        return (0, sendResponse_1.default)(res, {
+            success: false,
+            status: http_status_codes_1.StatusCodes.NOT_FOUND,
+            message: "Customer not found",
+        });
     (0, sendResponse_1.default)(res, {
         success: true,
         status: http_status_codes_1.StatusCodes.OK,

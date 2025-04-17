@@ -15,7 +15,7 @@ app.use(express_1.default.json());
 app.use("/api/", routes_1.default);
 app.get("/", (req, res) => {
     res.send({
-        Message: "Library server are runing..",
+        Message: "Bike Service server are runing..",
     });
 });
 app.use(globalErrorHandler_1.default);

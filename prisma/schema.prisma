@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,29 +7,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model Customer {
   customerId String   @id @default(uuid())
   name       String
   email      String   @unique
   phone      String
   createdAt  DateTime @default(now())
-
   Bikes      Bike[]
 
   @@map("customers")
 }
 
 model Bike {
-  bikeId     String   @id @default(uuid())
-  brand      String
-  model      String
-  year       Int
-  customerId String
-
-  Customer   Customer @relation(fields: [customerId], references: [customerId])
-
+  bikeId         String          @id @default(uuid())
+  brand          String
+  model          String
+  year           Int
+  customerId     String
+  Customer       Customer        @relation(fields: [customerId], references: [customerId])
   ServiceRecords ServiceRecord[]
 
   @@index([customerId])
@@ -43,14 +32,13 @@ model Bike {
 }
 
 model ServiceRecord {
-  serviceId      String   @id @default(uuid())
+  serviceId      String    @id @default(uuid())
   serviceDate    DateTime
   completionDate DateTime?
   description    String
   status         String
   bikeId         String
-
-  Bike           Bike     @relation(fields: [bikeId], references: [bikeId])
+  Bike           Bike      @relation(fields: [bikeId], references: [bikeId])
 
   @@index([bikeId])
   @@map("service_records")
