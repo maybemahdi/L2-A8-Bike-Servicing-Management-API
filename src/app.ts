@@ -11,13 +11,14 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/api/", router);
+
 app.get("/", (req: Request, res: Response) => {
   res.send({
     Message: "Library server are runing..",
   });
 });
 
-app.use("/api/", router);
 app.use(globalErrorHandler);
 
 // NOT FOUND API

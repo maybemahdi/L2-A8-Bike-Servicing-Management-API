@@ -1,5 +1,5 @@
 import { Request } from "express";
-import prisma from "../../../shared/prisma";
+import prisma from "../../shared/prisma";
 
 const createNewBike = async (req: Request) => {
   const newBikeData = await prisma.bike.create({

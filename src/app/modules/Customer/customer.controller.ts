@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import catchAsync from "../../../shared/catchAsync";
+import catchAsync from "../../shared/catchAsync";
 import { StatusCodes } from "http-status-codes";
-import sendResponse from "../../../shared//sendResponse";
+import sendResponse from "../../shared/sendResponse";
 import { CustomerService } from "./customer.service";
 
 export const createCustomer = catchAsync(

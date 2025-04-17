@@ -1,5 +1,5 @@
 import { Request } from "express";
-import prisma from "../../../shared/prisma";
+import prisma from "../../shared/prisma";
 
 const createCustomer = async (req: Request) => {
   const notExistCustomer = await prisma.customer.findUnique({

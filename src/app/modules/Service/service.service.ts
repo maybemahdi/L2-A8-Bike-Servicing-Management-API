@@ -1,5 +1,5 @@
 import { Request } from "express";
-import prisma from "../../../shared/prisma";
+import prisma from "../../shared/prisma";
 
 const createNewService = async (req: Request) => {
   const newService = await prisma.serviceRecord.create({
