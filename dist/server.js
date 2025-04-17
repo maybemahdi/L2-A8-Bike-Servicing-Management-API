@@ -17,7 +17,7 @@ const config_1 = __importDefault(require("./app/config"));
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         app_1.default.listen(config_1.default.port, () => {
-            console.log(`Bike Service Server running on port ${config_1.default.port}`);
+            console.log(`Server running on port ${config_1.default.port}`);
         });
     });
 }

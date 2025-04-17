@@ -59,7 +59,7 @@ const deleteCustomer = (req) => __awaiter(void 0, void 0, void 0, function* () {
                 customerId: req.params.customerId,
             },
         });
-        console.log("notExitsCustomer", notExitsCustomer);
+        // console.log("notExitsCustomer", notExitsCustomer);
         if (!notExitsCustomer)
             return null;
         const deletedResult = yield prisma_1.default.customer.delete({
@@ -67,7 +67,7 @@ const deleteCustomer = (req) => __awaiter(void 0, void 0, void 0, function* () {
                 customerId: req.params.customerId,
             },
         });
-        console.log("deletedResult", deletedResult);
+        // console.log("deletedResult", deletedResult);
         return deletedResult;
     }
     catch (err) {
