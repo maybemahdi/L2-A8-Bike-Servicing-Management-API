@@ -33,11 +33,11 @@ model Bike {
 
 model ServiceRecord {
   serviceId      String    @id @default(uuid())
+  bikeId         String
   serviceDate    DateTime
   completionDate DateTime?
   description    String
   status         String
-  bikeId         String
   Bike           Bike      @relation(fields: [bikeId], references: [bikeId])
 
   @@index([bikeId])

@@ -23,11 +23,11 @@ CREATE TABLE "bikes" (
 -- CreateTable
 CREATE TABLE "service_records" (
     "serviceId" TEXT NOT NULL,
+    "bikeId" TEXT NOT NULL,
     "serviceDate" TIMESTAMP(3) NOT NULL,
     "completionDate" TIMESTAMP(3),
     "description" TEXT NOT NULL,
     "status" TEXT NOT NULL,
-    "bikeId" TEXT NOT NULL,
 
     CONSTRAINT "service_records_pkey" PRIMARY KEY ("serviceId")
 );
