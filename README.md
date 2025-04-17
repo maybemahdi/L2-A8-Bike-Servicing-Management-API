@@ -29,8 +29,8 @@ The API Documentation with request and response via POSTMAN:
 
 1. **Clone the repository**:
 	```bash
-	git clone https://github.com/RittikaDev/bike-servicing-api-postgre
-	cd bike-servicing-api-postgre
+	https://github.com/maybemahdi/L2-A8-Bike-Servicing-Management-API
+	cd L2-A8-Bike-Servicing-Management-API
 	```
 
 2. **Install dependencies**:
