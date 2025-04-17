@@ -19,6 +19,14 @@ export const createCustomer = catchAsync(
 
 const getAllCustomers = catchAsync(async (req: Request, res: Response) => {
   const result = await CustomerService.getAllCustomers();
+
+  if (!result || result.length === 0)
+    return sendResponse(res, {
+      success: false,
+      status: StatusCodes.NOT_FOUND,
+      message: "Customers not found",
+    });
+
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
@@ -29,6 +37,14 @@ const getAllCustomers = catchAsync(async (req: Request, res: Response) => {
 
 const getSpecificCustomer = catchAsync(async (req: Request, res: Response) => {
   const result = await CustomerService.getSpecificCustomer(req);
+
+  if (!result)
+    return sendResponse(res, {
+      success: false,
+      status: StatusCodes.NOT_FOUND,
+      message: "Customer not found",
+    });
+
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
@@ -37,8 +53,7 @@ const getSpecificCustomer = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// update Customer data
-
+// UPDATE CUSTOMER DATA
 const updateCustomerData = catchAsync(async (req: Request, res: Response) => {
   const result = await CustomerService.updateCustomer(req);
   sendResponse(res, {
@@ -49,8 +64,7 @@ const updateCustomerData = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// delete Customer data
-
+// DELETE CUSTOMER DATA
 const deleteCustomerData = catchAsync(async (req: Request, res: Response) => {
   const result = await CustomerService.deleteCustomer(req);
   sendResponse(res, {

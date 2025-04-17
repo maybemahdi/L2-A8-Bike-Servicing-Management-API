@@ -19,6 +19,14 @@ const createNewBike = catchAsync(async (req: Request, res: Response) => {
 
 const getAllBikeData = catchAsync(async (req: Request, res: Response) => {
   const result = await BikeService.getAllBikeData();
+
+  if (!result || result.length === 0)
+    return sendResponse(res, {
+      success: false,
+      status: StatusCodes.NOT_FOUND,
+      message: "Bikes not found",
+    });
+
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,
@@ -29,6 +37,12 @@ const getAllBikeData = catchAsync(async (req: Request, res: Response) => {
 
 const getSpecificBike = catchAsync(async (req: Request, res: Response) => {
   const result = await BikeService.getSpecificBike(req);
+  if (!result)
+    return sendResponse(res, {
+      success: false,
+      status: StatusCodes.NOT_FOUND,
+      message: "Bike not found",
+    });
   sendResponse(res, {
     success: true,
     status: StatusCodes.OK,

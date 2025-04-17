@@ -7,14 +7,24 @@ const sendResponse = <T>(
     status: number;
     message: string;
     data?: T | null | undefined;
+    error?: any;
+    stack?: string;
   }
 ) => {
-  res.status(jsonData.status).json({
+  const response: any = {
     success: jsonData.success,
-    // status: jsonData.status,
     message: jsonData.message,
-    data: jsonData.data || null || undefined,
-  });
+  };
+  if (jsonData.success) response.data = jsonData.data || null;
+
+  if (!jsonData.success) {
+    response.status = jsonData.status;
+    // response.error = jsonData.error || null;
+    if (jsonData.stack && process.env.NODE_ENV === "development")
+      response.stack = jsonData.stack;
+  }
+
+  res.status(jsonData.status).json(response);
 };
 
 export default sendResponse;
