@@ -15,7 +15,7 @@ app.use("/api/", router);
 
 app.get("/", (req: Request, res: Response) => {
 	res.send({
-		Message: "Bike Service server are runing..",
+		Message: "Bike Service server is runing...",
 	});
 });
 

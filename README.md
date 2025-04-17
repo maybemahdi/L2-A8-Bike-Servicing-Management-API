@@ -93,7 +93,7 @@ The backend is deployed on Vercel and accessible at the following link:
 
 - **Get a specific customer by ID**
 
-  - `GET /api/customers/{customerId}`
+  - `GET /api/customers/:customerId`
   - **Response**:
     ```json
     {
@@ -111,7 +111,7 @@ The backend is deployed on Vercel and accessible at the following link:
 
 - **Update customer details**
 
-  - `PUT /api/customers/{customerId}`
+  - `PUT /api/customers/:customerId`
   - **Request Body**:
     ```json
     {
@@ -135,7 +135,7 @@ The backend is deployed on Vercel and accessible at the following link:
     ```
 
 - **Delete a customer**
-  - `DELETE /api/customers/{customerId}`
+  - `DELETE /api/customers/:customerId`
   - **Response**:
     ```json
     {
@@ -194,7 +194,7 @@ The backend is deployed on Vercel and accessible at the following link:
     ```
 
 - **Get a specific bike by ID**
-  - `GET /api/bikes/{bikeId}`
+  - `GET /api/bikes/:bikeId`
   - **Response**:
     ```json
     {
@@ -263,7 +263,7 @@ The backend is deployed on Vercel and accessible at the following link:
 
 - **Get a specific service record**
 
-  - `GET /api/services/{serviceId}`
+  - `GET /api/services/:serviceId`
   - **Response**:
     ```json
     {
@@ -282,7 +282,7 @@ The backend is deployed on Vercel and accessible at the following link:
 
 - **Mark a service as completed**
 
-  - `PUT /api/services/{serviceId}/complete`
+  - `PUT /api/services/:serviceId/complete`
   - **Request Body (optional: custom completionDate, else default to now)**:
     ```json
     {
